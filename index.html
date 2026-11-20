@@ -3,67 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Savetronik — Réparation électronique et réemploi à Provin et dans la MEL</title>
-  <meta name="description" content="Association à but non lucratif (Loi 1901) pour la réduction des déchets électroniques, la réparation au composant et le reconditionnement matériel à Provin, Bauvin et dans la MEL.">
+  <title>Savetronik - Réparation électronique et réemploi à Provin et dans la MEL</title>
+  <meta name="description" content="Association à but non lucratif pour la réduction des déchets électroniques, la réparation au composant et le reconditionnement matériel à Provin, Bauvin et dans la Métropole Européenne de Lille.">
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Alignement et structure de la section axes */
-    .axes-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--espace-l);
-    }
-    @media (min-width: 768px) {
-      .axes-grid {
-        grid-template-columns: 1fr 1fr 1fr;
-        align-items: start;
-      }
-      .axes-grid > div:nth-child(2) {
-        margin-top: var(--espace-l);
-      }
-      .axes-grid > div:nth-child(3) {
-        margin-top: calc(var(--espace-l) * 2);
-      }
-    }
-
-    /* Traitement spécifique de la liste des renvois à 3 colonnes par ligne sur ordinateur */
-    .renvois-liste {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .renvois-ligne {
-      display: flex;
-      flex-direction: column;
-      gap: var(--espace-s);
-      padding: var(--espace-m) 0;
-      border-bottom: 1px solid var(--couleur-bordure, #C8C2B4);
-    }
-    .renvois-liste .renvois-ligne:first-child {
-      border-top: 1px solid var(--couleur-bordure, #C8C2B4);
-    }
-    @media (min-width: 768px) {
-      .renvois-ligne {
-        display: grid;
-        grid-template-columns: 240px 1fr auto;
-        align-items: center;
-        gap: var(--espace-l);
-      }
-    }
-    .renvois-ligne h3 {
-      margin: 0;
-      font-size: 1.1rem;
-    }
-    .renvois-ligne p {
-      margin: 0;
-    }
-  </style>
 </head>
 <body>
 
   <a href="#contenu-principal" class="visuellement-cache">Aller au contenu principal</a>
 
-  <!-- EN-TÊTE ET NAVIGATION -->
   <header class="entete">
     <div class="conteneur conteneur--large entete__interieur">
       <a href="index.html" class="marque" aria-label="Accueil Savetronik">SAVETRONIK</a>
@@ -80,73 +27,30 @@
 
   <main id="contenu-principal">
 
-    <!-- PREMIER ÉCRAN (HERO ASYMÉTRIQUE) -->
     <section class="section premier-ecran">
       <div class="conteneur conteneur--large colonnes colonnes--asym">
         <div class="pile">
           <h1 class="premier-ecran__titre">Le droit à la réparation et la remise en service des appareils électroniques à Provin et dans la MEL</h1>
           <p class="premier-ecran__texte">
-            L'association Savetronik, fondée par Ainis Haichour et établie au 50 rue Camille Desmoulins à Provin (59185), remet en service vos équipements électroniques par le diagnostic et la réparation au niveau composant. Nous luttons contre l'obsolescence matérielle et le gaspillage d'équipements électriques et électroniques (DEEE) à Provin, Bauvin, dans le secteur des Weppes et la Métropole Européenne de Lille.
+            L'association Savetronik, établie à Provin (59185), remet en service vos équipements électroniques par le diagnostic et la réparation au niveau composant. Nous intervenons pour la réduction des déchets d'équipements électriques et électroniques à Provin, Bauvin, dans le secteur des Weppes et la Métropole Européenne de Lille.
           </p>
           <div class="reperes">
             <span>DIAGNOSTIC // FR-4</span>
             <span>59185 PROVIN</span>
             <span>LOI 1901</span>
           </div>
-          <p style="margin-top: var(--espace-m);">
+          <p style="margin-top: var(--espace-m); margin-bottom: 0;">
             <a href="contact.html" class="bouton">Demander un diagnostic</a>
           </p>
         </div>
 
         <div class="premier-ecran__media">
-          <svg viewBox="0 0 500 400" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schéma géométrique d'un circuit imprimé FR-4 avec puces et pistes de signal">
-            <!-- Arrière-plan grille et substrat -->
-            <rect width="500" height="400" fill="#EAE6DC" stroke="#C8C2B4" stroke-width="1"/>
-            <line x1="0" y1="360" x2="500" y2="40" stroke="#C8C2B4" stroke-width="1" stroke-dasharray="4 4"/>
-            <line x1="0" y1="100" x2="500" y2="100" stroke="#C8C2B4" stroke-width="1" stroke-dasharray="2 2"/>
-            <line x1="0" y1="300" x2="500" y2="300" stroke="#C8C2B4" stroke-width="1" stroke-dasharray="2 2"/>
-            
-            <!-- Composant central -->
-            <rect x="180" y="130" width="140" height="140" fill="#142E22" stroke="#B86222" stroke-width="2"/>
-            <text x="250" y="195" fill="#F5F3ED" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle" letter-spacing="1">SAVETRONIK</text>
-            <text x="250" y="215" fill="#C8C2B4" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">REV-2026.09</text>
-
-            <!-- Broches du composant -->
-            <line x1="150" y1="150" x2="180" y2="150" stroke="#B86222" stroke-width="2"/>
-            <line x1="150" y1="170" x2="180" y2="170" stroke="#B86222" stroke-width="2"/>
-            <line x1="150" y1="190" x2="180" y2="190" stroke="#B86222" stroke-width="2"/>
-            <line x1="150" y1="210" x2="180" y2="210" stroke="#B86222" stroke-width="2"/>
-            <line x1="150" y1="230" x2="180" y2="230" stroke="#B86222" stroke-width="2"/>
-            <line x1="150" y1="250" x2="180" y2="250" stroke="#B86222" stroke-width="2"/>
-
-            <line x1="320" y1="150" x2="350" y2="150" stroke="#B86222" stroke-width="2"/>
-            <line x1="320" y1="170" x2="350" y2="170" stroke="#B86222" stroke-width="2"/>
-            <line x1="320" y1="190" x2="350" y2="190" stroke="#B86222" stroke-width="2"/>
-            <line x1="320" y1="210" x2="350" y2="210" stroke="#B86222" stroke-width="2"/>
-            <line x1="320" y1="230" x2="350" y2="230" stroke="#B86222" stroke-width="2"/>
-            <line x1="320" y1="250" x2="350" y2="250" stroke="#B86222" stroke-width="2"/>
-
-            <!-- Pistes tracées -->
-            <path class="piste-svg" d="M 30 70 L 110 70 L 150 150" stroke="#B86222" stroke-width="2" fill="none" stroke-linecap="round"/>
-            <path class="piste-svg" d="M 30 330 L 110 330 L 150 250" stroke="#B86222" stroke-width="2" fill="none" stroke-linecap="round"/>
-            <path class="piste-svg" d="M 350 150 L 410 150 L 470 70" stroke="#142E22" stroke-width="2" fill="none" stroke-linecap="round"/>
-            <path class="piste-svg" d="M 350 250 L 410 250 L 470 330" stroke="#B86222" stroke-width="2" fill="none" stroke-linecap="round"/>
-
-            <!-- Points de test -->
-            <circle cx="30" cy="70" r="4" fill="#B86222"/>
-            <circle cx="30" cy="330" r="4" fill="#B86222"/>
-            <circle cx="470" cy="70" r="4" fill="#142E22"/>
-            <circle cx="470" cy="330" r="4" fill="#B86222"/>
-
-            <!-- Signal d'oscilloscope -->
-            <path d="M 40 200 L 70 200 L 80 170 L 90 230 L 100 200 L 130 200" stroke="#142E22" stroke-width="1.5" fill="none"/>
-          </svg>
-          <p class="legende">SCHÉMA TEC-01 // Banc d'atelier et pistes en cuivre sur substrat FR-4</p>
+          <canvas id="globe-3d" aria-label="Globe 3D filaire de la Terre tournant doucement au repos et plus vite lors du défilement vers le bas"></canvas>
+          <p class="legende">GLOBE TERRESTRE 3D // Rotation continue au repos - Accélération au défilement vers le bas</p>
         </div>
       </div>
     </section>
 
-    <!-- SECTION AXES DE TRAVAIL (MISE EN ESCALIER) -->
     <section class="section section--teintee">
       <div class="conteneur conteneur--large">
         <h2 class="titre-section">Les trois axes de travail de l'atelier</h2>
@@ -157,46 +61,44 @@
           </div>
           <div class="pile">
             <h3>Reconditionnement de matériel</h3>
-            <p>Collecte, dépollution, tests de charge et remise en service d'ordinateurs, serveurs d'auto-hébergement et consoles de jeu destinés au rebut afin de réintroduire des équipements viables dans le circuit local.</p>
+            <p>Collecte, dépollution, tests de charge et remise en service d'ordinateurs, serveurs d'auto-hébergement et matériel informatique destiné au recyclage afin de le réintroduire dans le circuit local.</p>
           </div>
           <div class="pile">
             <h3>Prototypage &amp; modding matériel</h3>
-            <p>Détournement technique et modernisation d'équipements existants. Intégration de microcontrôleurs ESP32 ou Raspberry Pi, gestion d'éclairages LED adressables et conception de circuits imprimés spécifiques.</p>
+            <p>Adaptation technique et modernisation d'équipements existants. Intégration de microcontrôleurs ESP32 ou Raspberry Pi, gestion d'éclairages adressables et conception de circuits imprimés spécifiques.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- RENVOIS VERS LES PAGES (LISTE À LIGNES SÉPARÉES EN 3 COLONNES SUR DESKTOP) -->
     <section class="section">
       <div class="conteneur conteneur--large">
         <h2 class="titre-section">Domaines d'intervention &amp; participation</h2>
         <ul class="renvois-liste">
           <li class="renvois-ligne">
             <h3>Projets techniques</h3>
-            <p>Présentation des interventions concrètes sur consoles, micro-soudure PCB, réutilisation de serveurs et systèmes embarqués.</p>
+            <p>Présentation des interventions concrètes sur cartes électroniques, micro-soudure, réutilisation de serveurs et systèmes embarqués.</p>
             <a href="projets.html" class="lien-fleche">Consulter les projets</a>
           </li>
           <li class="renvois-ligne">
             <h3>Avantages du modèle</h3>
-            <p>Explication du modèle associatif non lucratif, de la réparation ciblée au composant et de la réduction des flux de transport.</p>
+            <p>Structure associative à but non lucratif, réparation ciblée au composant et réduction des flux de transport de matériel.</p>
             <a href="avantages.html" class="lien-fleche">Découvrir les avantages</a>
           </li>
           <li class="renvois-ligne">
             <h3>Atelier et dons</h3>
-            <p>Modalités d'apport de matériel en panne ou inutilisé, sessions de bénévolat technique et partenariats locaux dans la MEL.</p>
+            <p>Modalités d'apport de matériel en panne ou inutilisé, sessions de bénévolat technique et partenariats locaux dans la Métropole Européenne de Lille.</p>
             <a href="atelier.html" class="lien-fleche">Rejoindre l'atelier</a>
           </li>
           <li class="renvois-ligne">
             <h3>Contact &amp; Diagnostic</h3>
-            <p>Coordonnées du siège à Provin et formulaire de demande préalable de diagnostic pour la prise de rendez-vous obligatoire.</p>
+            <p>Coordonnées du siège à Provin et formulaire de demande préalable pour un rendez-vous à l'atelier.</p>
             <a href="contact.html" class="lien-fleche">Prendre rendez-vous</a>
           </li>
         </ul>
       </div>
     </section>
 
-    <!-- BANDEAU ANCRAGE TERRITORIAL & CTA FINAL -->
     <section class="section section--inverse">
       <div class="conteneur conteneur--large pile">
         <h2 class="titre-section">Ancrage territorial &amp; accès à l'atelier</h2>
@@ -204,9 +106,9 @@
           L'association Savetronik déploie ses actions de proximité sur les communes de Provin, Bauvin, l'ensemble du secteur des Weppes et la Métropole Européenne de Lille.
         </p>
         <p class="note">
-          Modalité d'accès : L'accueil physique au siège et atelier situé au 50 rue Camille Desmoulins à Provin s'effectue exclusivement sur rendez-vous préalable formulé depuis le site.
+          Modalité d'accès : L'accueil physique au siège et atelier situé à Provin s'effectue sur rendez-vous préalable formulé depuis le site.
         </p>
-        <p style="margin-top: var(--espace-m);">
+        <p style="margin-top: var(--espace-m); margin-bottom: 0;">
           <a href="contact.html" class="bouton">Accéder au formulaire de rendez-vous</a>
         </p>
       </div>
@@ -214,20 +116,19 @@
 
   </main>
 
-  <!-- PIED DE PAGE UNIFIÉ -->
   <footer class="pied">
     <div class="conteneur conteneur--large">
       <div class="pied__colonnes">
         <div>
           <h3 style="font-size: 1.2rem; margin-top: 0; margin-bottom: var(--espace-s);">Savetronik</h3>
           <p style="font-size: 0.95rem;">
-            Association à but non lucratif (Loi 1901), déclarée en septembre 2026.<br>
-            Objet : Réduction des déchets DEEE, diagnostic, réparation au niveau composant, reconditionnement et modding matériel.
+            Association à but non lucratif (Loi 1901).<br>
+            Objet : Réduction des déchets électroniques, diagnostic, réparation au niveau composant, reconditionnement et adaptation matérielle.
           </p>
         </div>
         <div>
           <h3 style="font-size: 1.2rem; margin-top: 0; margin-bottom: var(--espace-s);">Arborescence</h3>
-          <ul class="filets" style="font-family: var(--police-mono, monospace); font-size: 0.9rem;">
+          <ul class="filets" style="font-family: var(--police-mono); font-size: 0.9rem;">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="projets.html">Projets techniques</a></li>
             <li><a href="avantages.html">Avantages du modèle</a></li>
@@ -237,24 +138,21 @@
         </div>
         <div>
           <h3 style="font-size: 1.2rem; margin-top: 0; margin-bottom: var(--espace-s);">Coordonnées &amp; Siège</h3>
-          <p style="font-family: var(--police-mono, monospace); font-size: 0.9rem;">
+          <p style="font-family: var(--police-mono); font-size: 0.9rem;">
             Association Savetronik<br>
-            Fondateur &amp; Président : Ainis Haichour<br>
-            50 rue Camille Desmoulins<br>
             59185 Provin<br>
-            Territoire : Provin, Bauvin, Weppes, MEL.<br>
+            Secteur : Provin, Bauvin, Weppes, MEL.<br>
             <em>Accueil uniquement sur rendez-vous.</em>
           </p>
         </div>
       </div>
       <div class="pied__mentions">
-        <span>© 2026 Savetronik, Association à but non lucratif (Loi 1901), Atelier d'électronique et de réemploi matériel</span>
+        <span>Savetronik, Association à but non lucratif (Loi 1901), Atelier d'électronique et de réemploi matériel</span>
       </div>
     </div>
   </footer>
 
   <script>
-    // Interaction du menu mobile
     const btnMenu = document.getElementById('btn-menu');
     const navPrincipale = document.getElementById('nav-principale');
 
@@ -264,6 +162,187 @@
         btnMenu.setAttribute('aria-expanded', isOpen);
       });
     }
+
+    (function initTerre3D() {
+      const canvas = document.getElementById('globe-3d');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      let width = 0;
+      let height = 0;
+      let radius = 0;
+      let angleY = 0;
+      const angleX = 0.35;
+
+      const baseSpeed = 0.003;
+      let extraSpeed = 0;
+      let lastScrollY = window.scrollY;
+
+      function ajusterTaille() {
+        const dpr = window.devicePixelRatio || 1;
+        const rect = canvas.getBoundingClientRect();
+        width = rect.width;
+        height = rect.height || rect.width;
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        ctx.scale(dpr, dpr);
+        radius = Math.min(width, height) * 0.38;
+      }
+
+      window.addEventListener('resize', ajusterTaille);
+      ajusterTaille();
+
+      window.addEventListener('scroll', () => {
+        const actuelScroll = window.scrollY;
+        const delta = actuelScroll - lastScrollY;
+        if (delta > 0) {
+          extraSpeed += delta * 0.0018;
+        }
+        lastScrollY = actuelScroll;
+      }, { passive: true });
+
+      const latitudes = [-60, -45, -30, -15, 0, 15, 30, 45, 60];
+      const longitudes = [];
+      for (let i = 0; i < 360; i += 20) {
+        longitudes.push(i);
+      }
+
+      const continents = [
+        { lat: 50.5, lon: 2.9, label: "PROVIN / MEL", focal: true },
+        { lat: 48.8, lon: 2.35 }, { lat: 51.5, lon: -0.12 }, { lat: 41.9, lon: 12.5 },
+        { lat: 52.5, lon: 13.4 }, { lat: 55.7, lon: 37.6 }, { lat: 40.4, lon: -3.7 },
+        { lat: 36.7, lon: 3.0 }, { lat: 30.0, lon: 31.2 }, { lat: -4.3, lon: 15.3 },
+        { lat: -26.2, lon: 28.0 }, { lat: 14.7, lon: -17.4 }, { lat: 12.0, lon: 8.5 },
+        { lat: 35.7, lon: 139.7 }, { lat: 31.2, lon: 121.4 }, { lat: 28.6, lon: 77.2 },
+        { lat: 13.7, lon: 100.5 }, { lat: 1.3, lon: 103.8 }, { lat: 25.0, lon: 55.3 },
+        { lat: 40.7, lon: -74.0 }, { lat: 34.0, lon: -118.2 }, { lat: 41.8, lon: -87.6 },
+        { lat: 29.7, lon: -95.3 }, { lat: 45.5, lon: -73.5 }, { lat: 19.4, lon: -99.1 },
+        { lat: -23.5, lon: -46.6 }, { lat: -34.6, lon: -58.4 }, { lat: -12.0, lon: -77.0 },
+        { lat: 4.6, lon: -74.0 }, { lat: -33.8, lon: 151.2 }, { lat: -37.8, lon: 144.9 },
+        { lat: -41.3, lon: 174.7 }
+      ];
+
+      function projeter(latDeg, lonDeg) {
+        const lat = latDeg * Math.PI / 180;
+        const lon = (lonDeg * Math.PI / 180) + angleY;
+
+        const x = Math.cos(lat) * Math.sin(lon);
+        const y = Math.sin(lat);
+        const z = Math.cos(lat) * Math.cos(lon);
+
+        const yRot = y * Math.cos(angleX) - z * Math.sin(angleX);
+        const zRot = y * Math.sin(angleX) + z * Math.cos(angleX);
+
+        return {
+          x: width / 2 + x * radius,
+          y: height / 2 - yRot * radius,
+          z: zRot
+        };
+      }
+
+      function animer() {
+        ctx.clearRect(0, 0, width, height);
+
+        ctx.beginPath();
+        ctx.arc(width / 2, height / 2, radius, 0, Math.PI * 2);
+        ctx.fillStyle = '#EAE6DC';
+        ctx.fill();
+        ctx.strokeStyle = '#C8C2B4';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        ctx.setLineDash([3, 4]);
+        ctx.strokeStyle = 'rgba(200, 194, 180, 0.5)';
+        ctx.beginPath();
+        ctx.moveTo(width / 2 - radius - 12, height / 2);
+        ctx.lineTo(width / 2 + radius + 12, height / 2);
+        ctx.moveTo(width / 2, height / 2 - radius - 12);
+        ctx.lineTo(width / 2, height / 2 + radius + 12);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        latitudes.forEach(lat => {
+          const pts = [];
+          for (let lon = 0; lon <= 360; lon += 6) {
+            pts.push(projeter(lat, lon));
+          }
+          for (let i = 0; i < pts.length - 1; i++) {
+            const p1 = pts[i];
+            const p2 = pts[i + 1];
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            if (p1.z > 0 && p2.z > 0) {
+              ctx.strokeStyle = lat === 0 ? 'rgba(168, 80, 20, 0.65)' : 'rgba(20, 46, 34, 0.4)';
+              ctx.lineWidth = lat === 0 ? 1.4 : 0.8;
+              ctx.stroke();
+            } else {
+              ctx.strokeStyle = 'rgba(200, 194, 180, 0.2)';
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
+          }
+        });
+
+        longitudes.forEach(lon => {
+          const pts = [];
+          for (let lat = -90; lat <= 90; lat += 6) {
+            pts.push(projeter(lat, lon));
+          }
+          for (let i = 0; i < pts.length - 1; i++) {
+            const p1 = pts[i];
+            const p2 = pts[i + 1];
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            if (p1.z > 0 && p2.z > 0) {
+              ctx.strokeStyle = 'rgba(20, 46, 34, 0.3)';
+              ctx.lineWidth = 0.8;
+              ctx.stroke();
+            } else {
+              ctx.strokeStyle = 'rgba(200, 194, 180, 0.18)';
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
+          }
+        });
+
+        continents.forEach(pt => {
+          const p = projeter(pt.lat, pt.lon);
+          if (p.z > 0) {
+            if (pt.focal) {
+              ctx.beginPath();
+              ctx.arc(p.x, p.y, 7, 0, Math.PI * 2);
+              ctx.strokeStyle = '#A85014';
+              ctx.lineWidth = 1.5;
+              ctx.stroke();
+
+              ctx.beginPath();
+              ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
+              ctx.fillStyle = '#A85014';
+              ctx.fill();
+
+              ctx.font = '10px "JetBrains Mono", monospace';
+              ctx.fillStyle = '#142E22';
+              ctx.fillText(pt.label, p.x + 10, p.y + 3);
+            } else {
+              ctx.beginPath();
+              ctx.arc(p.x, p.y, 2.5, 0, Math.PI * 2);
+              ctx.fillStyle = '#142E22';
+              ctx.fill();
+            }
+          }
+        });
+
+        const vitesseActuelle = baseSpeed + extraSpeed;
+        angleY += vitesseActuelle;
+        extraSpeed *= 0.92;
+
+        requestAnimationFrame(animer);
+      }
+
+      requestAnimationFrame(animer);
+    })();
   </script>
 </body>
 </html>
