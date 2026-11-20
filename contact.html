@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact et demande de diagnostic - Savetronik (Provin)</title>
+  <meta name="description" content="Coordonnées de l'association Savetronik à Provin et formulaire de demande de diagnostic, don de matériel, bénévolat ou partenariat.">
+  <style>
+    :root {
+      --fond: #F4F2ED;
+      --surface: #EAE6DC;
+      --surface-elevation: #FFFFFF;
+      --texte: #141A17;
+      --texte-attenue: #4A544F;
+      --primaire: #142E22;
+      --primaire-survol: #1F4534;
+      --accent: #B86222;
+      --bordure: #C8C2B4;
+      --bordure-focus: #142E22;
+      --erreur: #901B1B;
+      --erreur-fond: #FDF2F2;
+      --succes-fond: #142E22;
+      --succes-texte: #F4F2ED;
+
+      --police-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      --police-mono: "JetBrains Mono", "Fira Code", "Courier New", monospace;
+      
+      --taille-h1: clamp(1.8rem, 4vw, 2.5rem);
+      --taille-h2: clamp(1.3rem, 3vw, 1.8rem);
+      --taille-h3: clamp(1.1rem, 2vw, 1.3rem);
+      --taille-base: 1rem;
+      --taille-sm: 0.875rem;
+
+      --espace-xs: 0.5rem;
+      --espace-s: 0.75rem;
+      --espace-m: clamp(1rem, 2vw, 1.5rem);
+      --espace-l: clamp(1.5rem, 3vw, 2rem);
+      --espace-xl: clamp(2rem, 4vw, 3rem);
+
+      --rayon-s: 2px;
+      --rayon-m: 4px;
+      
+      --duree-transition: 200ms;
+      --courbe-transition: ease-in-out;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--fond);
+      color: var(--texte);
+      font-family: var(--police-sans);
+      font-size: var(--taille-base);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      color: var(--texte);
+      line-height: 1.25;
+      margin-top: 0;
+    }
+
+    h1 { font-size: var(--taille-h1); }
+    h2 { font-size: var(--taille-h2); }
+    h3 { font-size: var(--taille-h3); }
+
+    p, ul {
+      max-width: 75ch;
+      margin-top: 0;
+    }
+
+    .visuellement-cache {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .visuellement-cache:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      padding: var(--espace-s);
+      margin: 0;
+      overflow: visible;
+      clip: auto;
+      white-space: normal;
+      background-color: var(--surface-elevation);
+      color: var(--texte);
+      display: block;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--bordure-focus);
+      outline-offset: 2px;
+    }
+
+    .conteneur {
+      width: 100%;
+      max-width: 1140px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: var(--espace-m);
+      padding-right: var(--espace-m);
+    }
+
+    .entete {
+      background-color: var(--surface-elevation);
+      border-bottom: 1px solid var(--bordure);
+      padding: var(--espace-m) 0;
+    }
+
+    .entete__interieur {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--espace-m);
+    }
+
+    .marque {
+      font-family: var(--police-mono);
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--primaire);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+
+    .nav {
+      display: flex;
+      gap: var(--espace-m);
+    }
+
+    .nav a {
+      color: var(--texte);
+      text-decoration: none;
+      font-size: var(--taille-sm);
+      font-weight: 500;
+      padding: var(--espace-xs) 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav a:hover,
+    .nav a[aria-current="page"] {
+      border-bottom-color: var(--primaire);
+      color: var(--primaire);
+    }
+
+    .nav-bouton {
+      display: none;
+      background: none;
+      border: 1px solid var(--bordure);
+      padding: var(--espace-xs) var(--espace-s);
+      font-family: var(--police-mono);
+      font-size: var(--taille-sm);
+      color: var(--texte);
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-bouton {
+        display: block;
+      }
+
+      .nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--surface-elevation);
+        border-bottom: 1px solid var(--bordure);
+        padding: var(--espace-m);
+      }
+
+      .nav--ouverte {
+        display: flex;
+      }
+    }
+
+    .section {
+      padding: var(--espace-xl) 0;
+    }
+
+    .section--intro {
+      border-bottom: 1px solid var(--bordure);
+    }
+
+    .chapeau {
+      font-size: 1.1rem;
+      color: var(--texte-attenue);
+    }
+
+    .grille-contact {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--espace-xl);
+    }
+
+    @media (min-width: 768px) {
+      .grille-contact {
+        grid-template-columns: 4fr 5fr;
+        align-items: start;
+      }
+    }
+
+    .panneau {
+      background-color: var(--surface-elevation);
+      border: 1px solid var(--bordure);
+      border-radius: var(--rayon-m);
+      padding: var(--espace-l);
+    }
+
+    .panneau-titre {
+      border-bottom: 1px solid var(--bordure);
+      padding-bottom: var(--espace-s);
+      margin-bottom: var(--espace-m);
+    }
+
+    .adresse-bloc {
+      font-family: var(--police-mono);
+      font-size: var(--taille-sm);
+      line-height: 1.7;
+      margin-bottom: var(--espace-m);
+    }
+
+    .liste-epuree {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 var(--espace-m) 0;
+      font-size: var(--taille-sm);
+    }
+
+    .liste-epuree li {
+      padding: var(--espace-xs) 0;
+      border-bottom: 1px dashed var(--bordure);
+    }
+
+    .carte-svg {
+      margin-top: var(--espace-m);
+      border: 1px solid var(--bordure);
+      border-radius: var(--rayon-m);
+      overflow: hidden;
+      background-color: var(--surface);
+    }
+
+    .carte-svg svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .formulaire {
+      display: flex;
+      flex-direction: column;
+      gap: var(--espace-m);
+    }
+
+    .champ {
+      display: flex;
+      flex-direction: column;
+      gap: var(--espace-xs);
+    }
+
+    .champ label {
+      font-weight: 600;
+      font-size: var(--taille-sm);
+      color: var(--texte);
+    }
+
+    .champ-obligatoire::after {
+      content: " *";
+      color: var(--accent);
+    }
+
+    .champ input[type="text"],
+    .champ input[type="email"],
+    .champ select,
+    .champ textarea {
+      width: 100%;
+      font-family: inherit;
+      font-size: var(--taille-base);
+      color: var(--texte);
+      background-color: var(--fond);
+      border: 1px solid var(--bordure);
+      border-radius: var(--rayon-s);
+      padding: var(--espace-s);
+    }
+
+    .champ input:focus-visible,
+    .champ select:focus-visible,
+    .champ textarea:focus-visible {
+      background-color: var(--surface-elevation);
+    }
+
+    .champ__aide {
+      font-size: var(--taille-sm);
+      color: var(--texte-attenue);
+    }
+
+    .champ__erreur {
+      font-size: var(--taille-sm);
+      color: var(--erreur);
+      background-color: var(--erreur-fond);
+      padding: var(--espace-xs) var(--espace-s);
+      border-left: 3px solid var(--erreur);
+      border-radius: var(--rayon-s);
+      display: none;
+    }
+
+    .bouton {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--primaire);
+      color: var(--surface-elevation);
+      font-family: var(--police-sans);
+      font-size: var(--taille-base);
+      font-weight: 600;
+      padding: var(--espace-s) var(--espace-l);
+      border: 1px solid var(--primaire);
+      border-radius: var(--rayon-s);
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color var(--duree-transition) var(--courbe-transition);
+    }
+
+    .bouton:hover {
+      background-color: var(--primaire-survol);
+      border-color: var(--primaire-survol);
+    }
+
+    .formulaire__confirmation {
+      background-color: var(--succes-fond);
+      color: var(--succes-texte);
+      padding: var(--espace-m);
+      border-radius: var(--rayon-m);
+      border-left: 4px solid var(--accent);
+      margin-bottom: var(--espace-m);
+      display: none;
+    }
+
+    .formulaire__confirmation h3 {
+      color: var(--succes-texte);
+      margin-bottom: var(--espace-xs);
+    }
+
+    .formulaire__confirmation p {
+      color: var(--succes-texte);
+      margin-bottom: 0;
+    }
+
+    .pied {
+      background-color: var(--surface);
+      border-top: 1px solid var(--bordure);
+      padding: var(--espace-xl) 0 var(--espace-l) 0;
+      margin-top: var(--espace-xl);
+    }
+
+    .pied__grille {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--espace-l);
+      margin-bottom: var(--espace-l);
+    }
+
+    @media (min-width: 768px) {
+      .pied__grille {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .pied__nav {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-family: var(--police-mono);
+      font-size: var(--taille-sm);
+    }
+
+    .pied__nav li {
+      margin-bottom: var(--espace-xs);
+    }
+
+    .pied__nav a {
+      color: var(--texte);
+      text-decoration: none;
+    }
+
+    .pied__nav a:hover {
+      text-decoration: underline;
+    }
+
+    .pied__info {
+      font-size: var(--taille-sm);
+      color: var(--texte-attenue);
+      border-top: 1px solid var(--bordure);
+      padding-top: var(--espace-m);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#contenu-principal" class="visuellement-cache">Aller au contenu principal</a>
+
+  <header class="entete">
+    <div class="conteneur entete__interieur">
+      <a href="index.html" class="marque">SAVETRONIK</a>
+      <button class="nav-bouton" id="btn-menu" aria-label="Menu de navigation" aria-expanded="false" aria-controls="nav-principale">Menu</button>
+      <nav class="nav" id="nav-principale">
+        <a href="index.html">Accueil</a>
+        <a href="projets.html">Projets</a>
+        <a href="avantages.html">Avantages</a>
+        <a href="atelier.html">Atelier et dons</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu-principal">
+
+    <section class="section section--intro">
+      <div class="conteneur">
+        <h1>Contact et demande de diagnostic</h1>
+        <p class="chapeau">
+          L'association Savetronik reçoit exclusivement sur rendez-vous dans ses locaux de Provin. Utilisez le formulaire ci-dessous pour transmettre votre demande de diagnostic, proposer du matériel ou organiser un partenariat.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="conteneur grille-contact">
+
+        <div>
+          <div class="panneau">
+            <h2 class="panneau-titre">Coordonnées</h2>
+            <div class="adresse-bloc">
+              Association Savetronik<br>
+              59185 Provin<br>
+              Accueil sur rendez-vous uniquement.
+            </div>
+
+            <h3>Zones desservies</h3>
+            <ul class="liste-epuree">
+              <li>Communes locales : Provin, Bauvin, Annœullin, Carvin</li>
+              <li>Secteur Weppes : Sainghin-en-Weppes, Wavrin, Don</li>
+              <li>Métropole Européenne de Lille et bassin environnant</li>
+            </ul>
+
+            <h3>Modalités d'accès</h3>
+            <p style="font-size: var(--taille-sm); color: var(--texte-attenue);">
+              Le dépôt et la reprise de matériel s'effectuent après confirmation écrite de la date de rendez-vous par l’équipe technique.
+            </p>
+          </div>
+
+          <div class="carte-svg">
+            <svg viewBox="0 0 400 220" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plan schématique de situation de la commune de Provin dans le secteur Weppes-MEL">
+              <rect width="400" height="220" fill="#EAE6DC" stroke="#C8C2B4" stroke-width="1"/>
+              <line x1="50" y1="0" x2="50" y2="220" stroke="#C8C2B4" stroke-width="1" stroke-dasharray="2 2"/>
+              <line x1="200" y1="0" x2="200" y2="220" stroke="#C8C2B4" stroke-width="1" stroke-dasharray="2 2"/>
+              <line x1="350" y1="0" x2="350" y2="220" stroke="#C8C2B4" stroke-width="1" stroke-dasharray="2 2"/>
+              <line x1="0" y1="110" x2="400" y2="110" stroke="#C8C2B4" stroke-width="1" stroke-dasharray="2 2"/>
+              
+              <path d="M 60 170 L 140 170 L 210 110 L 330 50" stroke="#142E22" stroke-width="2" fill="none"/>
+              <path d="M 140 170 L 140 80 L 220 40" stroke="#B86222" stroke-width="2" fill="none"/>
+
+              <circle cx="140" cy="170" r="7" fill="#B86222" stroke="#142E22" stroke-width="2"/>
+              <text x="140" y="198" fill="#141A17" font-family="JetBrains Mono, monospace" font-size="11" font-weight="bold" text-anchor="middle">PROVIN</text>
+
+              <circle cx="70" cy="170" r="4" fill="#142E22"/>
+              <text x="70" y="155" fill="#141A17" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">BAUVIN</text>
+
+              <circle cx="330" cy="50" r="5" fill="#142E22"/>
+              <text x="330" y="38" fill="#141A17" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle">MEL / LILLE</text>
+
+              <circle cx="210" cy="110" r="4" fill="#142E22"/>
+              <text x="225" y="118" fill="#141A17" font-family="JetBrains Mono, monospace" font-size="9">WEPPES</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="panneau">
+          <h2 class="panneau-titre">Formulaire de contact</h2>
+
+          <div id="confirmation-message" class="formulaire__confirmation" role="alert" aria-live="polite">
+            <h3>Demande enregistrée.</h3>
+            <p id="confirmation-details"></p>
+          </div>
+
+          <form id="form-contact" class="formulaire" action="#" method="post" novalidate>
+            
+            <div class="champ">
+              <label for="nom" class="champ-obligatoire">Nom complet ou organisation</label>
+              <input type="text" id="nom" name="nom" required aria-required="true">
+              <span class="champ__erreur" id="erreur-nom">Veuillez renseigner votre nom.</span>
+            </div>
+
+            <div class="champ">
+              <label for="email" class="champ-obligatoire">Adresse e-mail</label>
+              <input type="email" id="email" name="email" required aria-required="true">
+              <span class="champ__erreur" id="erreur-email">Veuillez saisir une adresse e-mail valide.</span>
+            </div>
+
+            <div class="champ">
+              <label for="objet" class="champ-obligatoire">Objet de la demande</label>
+              <select id="objet" name="objet" required aria-required="true">
+                <option value="">Sélectionner un motif</option>
+                <option value="Réparation d'un appareil">Réparation d'un appareil</option>
+                <option value="Don de matériel">Don de matériel</option>
+                <option value="Bénévolat">Bénévolat</option>
+                <option value="Partenariat">Partenariat</option>
+              </select>
+              <span class="champ__erreur" id="erreur-objet">Veuillez sélectionner un objet dans la liste.</span>
+            </div>
+
+            <div class="champ">
+              <label for="modele">Modèle ou référence de l'appareil concerné</label>
+              <input type="text" id="modele" name="modele">
+              <span class="champ__aide">Indiquer la référence figurant sur la plaque signalétique ou le boîtier si applicable.</span>
+            </div>
+
+            <div class="champ">
+              <label for="description" class="champ-obligatoire">Description du problème ou du projet</label>
+              <textarea id="description" name="description" rows="6" required aria-required="true"></textarea>
+              <span class="champ__erreur" id="erreur-description">Veuillez préciser votre demande (15 caractères minimum).</span>
+            </div>
+
+            <div>
+              <button type="submit" class="bouton" id="btn-soumettre">Envoyer la demande</button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <div class="pied__grille">
+        <div>
+          <h3>Savetronik</h3>
+          <p style="font-size: var(--taille-sm);">
+            Association à but non lucratif dédiée au diagnostic, à la réparation électronique au composant et à la réduction des déchets d'équipements électriques et électroniques.
+          </p>
+        </div>
+        <div>
+          <h3>Navigation</h3>
+          <ul class="pied__nav">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="projets.html">Projets</a></li>
+            <li><a href="avantages.html">Avantages</a></li>
+            <li><a href="atelier.html">Atelier et dons</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Localisation</h3>
+          <p style="font-family: var(--police-mono); font-size: var(--taille-sm);">
+            Association Savetronik<br>
+            59185 Provin<br>
+            Accueil uniquement sur rendez-vous.
+          </p>
+        </div>
+      </div>
+      <div class="pied__info">
+        Savetronik - Association à but non lucratif (Loi 1901) - 59185 Provin.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btnMenu = document.getElementById('btn-menu');
+      const navPrincipale = document.getElementById('nav-principale');
+
+      if (btnMenu && navPrincipale) {
+        btnMenu.addEventListener('click', () => {
+          const isOpen = navPrincipale.classList.toggle('nav--ouverte');
+          btnMenu.setAttribute('aria-expanded', isOpen);
+        });
+      }
+
+      const form = document.getElementById('form-contact');
+      const nomInput = document.getElementById('nom');
+      const emailInput = document.getElementById('email');
+      const objetInput = document.getElementById('objet');
+      const modeleInput = document.getElementById('modele');
+      const descriptionInput = document.getElementById('description');
+      const confirmationMsg = document.getElementById('confirmation-message');
+      const confirmationDetails = document.getElementById('confirmation-details');
+
+      const errNom = document.getElementById('erreur-nom');
+      const errEmail = document.getElementById('erreur-email');
+      const errObjet = document.getElementById('erreur-objet');
+      const errDesc = document.getElementById('erreur-description');
+
+      function estEmailValide(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          let estValide = true;
+
+          [errNom, errEmail, errObjet, errDesc].forEach(el => el.style.display = 'none');
+
+          if (!nomInput.value.trim()) {
+            errNom.style.display = 'block';
+            estValide = false;
+          }
+
+          if (!emailInput.value.trim() || !estEmailValide(emailInput.value.trim())) {
+            errEmail.style.display = 'block';
+            estValide = false;
+          }
+
+          if (!objetInput.value) {
+            errObjet.style.display = 'block';
+            estValide = false;
+          }
+
+          if (!descriptionInput.value.trim() || descriptionInput.value.trim().length < 15) {
+            errDesc.style.display = 'block';
+            estValide = false;
+          }
+
+          if (estValide) {
+            const nom = nomInput.value.trim();
+            const email = emailInput.value.trim();
+            const objet = objetInput.value;
+            const modele = modeleInput.value.trim() ? ' (Modèle : ' + modeleInput.value.trim() + ')' : '';
+
+            confirmationDetails.textContent = 'Votre demande concernant "' + objet + '"' + modele + ' a été transmise. Un message de confirmation a été adressé à ' + email + '. L\'association vous recontactera pour convenir d\'un rendez-vous à Provin.';
+
+            confirmationMsg.style.display = 'block';
+            form.reset();
+            confirmationMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
