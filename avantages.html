@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Savetronik — Avantages du modèle associatif et de la réparation au composant</title>
+  <meta name="description" content="Analyse comparative du modèle associatif Savetronik : réparation ciblée au composant défaillant, démarche locale à Provin et dans la MEL, transparence du diagnostic.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Alignement et structures spécifiques à la page Avantages */
+    .comparatif-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: var(--espace-m);
+      font-size: 1rem;
+    }
+    .comparatif-table th,
+    .comparatif-table td {
+      padding: var(--espace-m);
+      border: 1px solid var(--bordure);
+      text-align: left;
+      vertical-align: top;
+    }
+    .comparatif-table th {
+      font-family: var(--police-titre);
+      font-weight: 700;
+      background-color: var(--surface);
+    }
+    .comparatif-table td:first-child {
+      font-family: var(--police-mono);
+      font-size: 0.9rem;
+      width: 25%;
+    }
+    @media (max-width: 767px) {
+      .comparatif-table, .comparatif-table tbody, .comparatif-table tr, .comparatif-table td, .comparatif-table th {
+        display: block;
+        width: 100%;
+      }
+      .comparatif-table tr {
+        margin-bottom: var(--espace-m);
+        border: 1px solid var(--bordure);
+      }
+      .comparatif-table td, .comparatif-table th {
+        border: none;
+        border-bottom: 1px solid var(--bordure);
+      }
+    }
+
+    .schema-technique {
+      border: 1px solid var(--bordure);
+      background-color: var(--surface);
+      padding: var(--espace-m);
+      display: flex;
+      flex-direction: column;
+      gap: var(--espace-xs);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="entete">
+    <div class="conteneur conteneur--large entete__interieur">
+      <a href="index.html" class="marque" aria-label="Accueil Savetronik">SAVETRONIK</a>
+      <button class="nav-bouton" id="btn-menu" aria-label="Menu de navigation" aria-expanded="false" aria-controls="nav-principale">MENU</button>
+      <nav class="nav" id="nav-principale">
+        <a href="index.html">Accueil</a>
+        <a href="projets.html">Projets</a>
+        <a href="avantages.html" aria-current="page">Avantages</a>
+        <a href="atelier.html">Atelier &amp; Dons</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1 : ACCROCHE ET PRESENTATION DU MODELE -->
+    <section class="section">
+      <div class="conteneur conteneur--large">
+        <div class="colonnes colonnes--asym">
+          <div>
+            <h1 class="titre-section">Avantages du modèle associatif et de l'intervention au composant</h1>
+            <p class="chapeau">
+              L'obsolescence des équipements électroniques découle souvent de choix logistiques et commerciaux plutôt que d'une impossibilité technique. Notre association restaure la viabilité matérielle en remplaçant la pièce défaillante à la source.
+            </p>
+            <p>
+              Face à la pratique courante d'échange standard complet de sous-ensembles coûteux, Savetronik privilégie l'analyse des cartes électroniques au niveau des composants discrets et des circuits intégrés. Cette démarche modifie directement la viabilité financière de la remise en service.
+            </p>
+            <div style="margin-top: var(--espace-l);">
+              <a href="contact.html" class="bouton">Soumettre un matériel</a>
+            </div>
+          </div>
+          <div>
+            <div class="schema-technique">
+              <span style="font-family: var(--police-mono); font-size: 0.85rem; color: var(--accent);">[ DIAGRAMME DE FLUX : INTERVENTION ]</span>
+              <svg viewBox="0 0 400 220" width="100%" height="auto" aria-hidden="true" style="margin-top: var(--espace-xs);">
+                <rect x="10" y="10" width="380" height="200" fill="none" stroke="#C8C2B4" stroke-width="1"/>
+                <!-- Circuit trace lines -->
+                <path d="M 30 50 L 120 50 L 150 90 L 250 90 L 280 50 L 370 50" fill="none" stroke="#142E22" stroke-width="2" />
+                <path d="M 30 170 L 100 170 L 140 130 L 260 130 L 300 170 L 370 170" fill="none" stroke="#142E22" stroke-width="2" />
+                <!-- Diagnostic node -->
+                <circle cx="150" cy="90" r="5" fill="#B86222" />
+                <circle cx="250" cy="90" r="5" fill="#B86222" />
+                <!-- Test point label -->
+                <line x1="200" y1="30" x2="200" y2="170" stroke="#B86222" stroke-width="1" stroke-dasharray="4 4" />
+                <rect x="160" y="75" width="80" height="30" fill="#EAE6DC" stroke="#142E22" stroke-width="1" />
+                <text x="200" y="94" font-family="JetBrains Mono" font-size="10" fill="#141A17" text-anchor="middle">CMS HS</text>
+                <text x="200" y="18" font-family="JetBrains Mono" font-size="10" fill="#B86222" text-anchor="middle">ISOLATION PANNE</text>
+              </svg>
+              <p class="legende" style="margin-top: var(--espace-xs);">
+                Ciblage de l'élément en court-circuit (condensateur, MOSFET, diode) sans rebut de la carte mère.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 : COMPARATIF TECHNIQUE -->
+    <section class="section section--teintee">
+      <div class="conteneur conteneur--large">
+        <h2 class="titre-section">Analyse comparative des approches</h2>
+        <p class="chapeau">
+          Comprendre les différences structurelles entre les réseaux d'après-vente industriels et l'intervention ciblée en atelier associatif.
+        </p>
+
+        <table class="comparatif-table">
+          <thead>
+            <tr>
+              <th>Axe d'analyse</th>
+              <th>SAV constructeur / Circuit commercial</th>
+              <th>Approche atelier Savetronik</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Méthode d'intervention</td>
+              <td>Remplacement intégral du sous-ensemble (carte mère complète) ou incitation au rachat de l'appareil.</td>
+              <td>Dessoudage du composant passif ou actif défaillant, nettoyage des plages d'accueil et pose d'un composant neuf.</td>
+            </tr>
+            <tr>
+              <td>Structure des coûts</td>
+              <td>Coût de pièce équivalent à 70% de la valeur à neuf de l'appareil, intégrant les marges intermédiaires de distribution.</td>
+              <td>Facturation au coût réel du composant à l'unité et prise en charge dans le cadre du fonctionnement associatif à but non lucratif.</td>
+            </tr>
+            <tr>
+              <td>Impact environnemental</td>
+              <td>Production de déchets électroniques complexes (DEEE) et transport international des pièces de rechange.</td>
+              <td>Conservation du substrat FR-4 et des composants fonctionnels. Déplacement limité aux trajets locaux de proximité.</td>
+            </tr>
+            <tr>
+              <td>Transparence technique</td>
+              <td>Devis forfaitaire sans détail des mesures électriques ni justification de la panne relevée sur la carte.</td>
+              <td>Restitution explicite du diagnostic au propriétaire avec indication de la ligne de tension ou de la puce défectueuse.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 3 : LES QUATRE PILIERS DU MODELE SAVETRONIK -->
+    <section class="section">
+      <div class="conteneur conteneur--large">
+        <h2 class="titre-section">Les quatre fondements de notre action</h2>
+        
+        <div class="pile" style="gap: var(--espace-l); margin-top: var(--espace-l);">
+          
+          <div class="colonnes colonnes--asym" style="align-items: center; border-bottom: 1px solid var(--bordure); padding-bottom: var(--espace-l);">
+            <div>
+              <span class="reperes">01. TECHNIQUE</span>
+              <h3 style="margin-top: var(--espace-xs);">Intervention à l'échelle du composant dissimulé</h3>
+              <p>
+                Un sous-ensemble électronique en panne comporte souvent plus de 99% de composants en parfait état de marche. L'atelier utilise la station de dessoudage à air chaud, le fer haute précision et le microscope bino afin de localiser la puce, le condensateur en court-circuit ou la résistance de fuite altérée. Remplacer un seul composant de quelques millimètres préserve l'intégralité du matériel d'origine.
+              </p>
+            </div>
+            <div>
+              <div class="schema-technique">
+                <span style="font-family: var(--police-mono); font-size: 0.8rem; stroke: var(--accent);">[ RECONSTRUCTION PISTE ]</span>
+                <p class="legende" style="margin: 0;">Restauration des liaisons de cuivre coupées après oxydation ou choc mécanique.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="colonnes colonnes--asym" style="align-items: center; border-bottom: 1px solid var(--bordure); padding-bottom: var(--espace-l);">
+            <div>
+              <span class="reperes">02. ECONOMIE</span>
+              <h3 style="margin-top: var(--espace-xs);">Modèle associatif non lucratif (Loi 1901)</h3>
+              <p>
+                La structure juridique d'association à but non lucratif, fondée par Ainis Haichour et déclarée en septembre 2026, écarte toute recherche de marge commerciale. Cette neutralité économique rééquilibre l'équation de la réparation : du matériel réputé techniquement hors d'usage ou économiquement irréparable retrouve son usage initial sans incitation au surconso.
+              </p>
+            </div>
+            <div>
+              <div class="schema-technique">
+                <span style="font-family: var(--police-mono); font-size: 0.8rem;">[ STATUT LEGAL ]</span>
+                <p class="legende" style="margin: 0;">Gestion désintéressée orientée vers la réduction des déchets DEEE à Provin.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="colonnes colonnes--asym" style="align-items: center; border-bottom: 1px solid var(--bordure); padding-bottom: var(--espace-l);">
+            <div>
+              <span class="reperes">03. TERRITOIRE</span>
+              <h3 style="margin-top: var(--espace-xs);">Circuit court sur Provin, Bauvin et la MEL</h3>
+              <p>
+                Basé au 50 rue Camille Desmoulins à Provin, l'atelier traite directement les flux d'équipements issus du secteur des Weppes et de la Métropole Européenne de Lille. L'absence d'expéditions vers des centres techniques lointains supprime l'empreinte carbone liée aux emballages de transport intermédiaire et aux rotations de camionnettes de fret.
+              </p>
+            </div>
+            <div>
+              <div class="schema-technique">
+                <span style="font-family: var(--police-mono); font-size: 0.8rem;">[ ANCRAGE LOCAL ]</span>
+                <p class="legende" style="margin: 0;">Dépôt direct de l'appareil sur rendez-vous à l'atelier de Provin.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="colonnes colonnes--asym" style="align-items: center;">
+            <div>
+              <span class="reperes">04. PEDAGOGIE</span>
+              <h3 style="margin-top: var(--espace-xs);">Diagnostic formalisé et explicité au propriétaire</h3>
+              <p>
+                Avant tout acte technique de micro-soudure ou de remplacement de sous-ensemble, le diagnostic est exposé en termes clairs. Vous comprenez la cause exacte de la panne (surtension, usure thermique, défaut de conception du fabricant, oxydation par liquide) et validez en connaissance de cause l'opportunité de l'intervention.
+              </p>
+            </div>
+            <div>
+              <div class="schema-technique">
+                <span style="font-family: var(--police-mono); font-size: 0.8rem;">[ MESURE ELECTRIQUE ]</span>
+                <p class="legende" style="margin: 0;">Relevé des impédances et des lignes de tension communiqué lors du diagnostic.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4 : BANDEAU ANCRAGE TERRIORIAL & CTA -->
+    <section class="section section--inverse">
+      <div class="conteneur conteneur--large">
+        <div class="colonnes colonnes--asym" style="align-items: center;">
+          <div>
+            <h2 style="color: var(--fond); margin-top: 0;">Un appareil à faire analyser à l'atelier ?</h2>
+            <p style="color: var(--texte-secondaire); font-family: var(--police-corps); font-size: 1.1rem; margin-bottom: 0;">
+              L’accueil à l'atelier du 50 rue Camille Desmoulins à Provin s’effectue exclusivement sur rendez-vous. Renseignez la référence du matériel et les symptômes constatés pour planifier un diagnostic technique.
+            </p>
+          </div>
+          <div style="text-align: right;">
+            <a href="contact.html" class="bouton">Prendre rendez-vous</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur conteneur--large">
+      <div class="pied__colonnes">
+        <div>
+          <h3 style="font-size: 1.2rem; margin-top: 0; margin-bottom: var(--espace-s);">Savetronik</h3>
+          <p style="font-size: 0.95rem;">
+            Association à but non lucratif (Loi 1901), déclarée en septembre 2026.<br>
+            Objet : Réduction des déchets DEEE, diagnostic, réparation au niveau composant, reconditionnement et modding matériel.
+          </p>
+        </div>
+        <div>
+          <h3 style="font-size: 1.2rem; margin-top: 0; margin-bottom: var(--espace-s);">Arborescence</h3>
+          <ul class="filets" style="font-family: var(--police-mono, monospace); font-size: 0.9rem;">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="projets.html">Projets techniques</a></li>
+            <li><a href="avantages.html">Avantages du modèle</a></li>
+            <li><a href="atelier.html">Atelier &amp; Dons</a></li>
+            <li><a href="contact.html">Contact &amp; Diagnostic</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="font-size: 1.2rem; margin-top: 0; margin-bottom: var(--espace-s);">Coordonnées &amp; Siège</h3>
+          <p style="font-family: var(--police-mono, monospace); font-size: 0.9rem;">
+            Association Savetronik<br>
+            Fondateur &amp; Président : Ainis Haichour<br>
+            50 rue Camille Desmoulins<br>
+            59185 Provin<br>
+            Territoire : Provin, Bauvin, Weppes, MEL.<br>
+            <em>Accueil uniquement sur rendez-vous.</em>
+          </p>
+        </div>
+      </div>
+      <div class="pied__mentions">
+        <span>© 2026 Savetronik, Association à but non lucratif (Loi 1901), Atelier d'électronique et de réemploi matériel</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Gestion du menu mobile
+    const btnMenu = document.getElementById('btn-menu');
+    const navPrincipale = document.getElementById('nav-principale');
+
+    if (btnMenu && navPrincipale) {
+      btnMenu.addEventListener('click', () => {
+        const estOuvert = btnMenu.getAttribute('aria-expanded') === 'true';
+        btnMenu.setAttribute('aria-expanded', !estOuvert);
+        navPrincipale.classList.toggle('nav--ouverte');
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets techniques et interventions d'atelier — Savetronik</title>
+  <meta name="description" content="Présentation des travaux de réparation au composant, micro-soudure, reconditionnement de serveurs et systèmes embarqués réalisés par l'association Savetronik à Provin.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Traitement spécifique à la page Projets : disposition en escalier des domaines */
+    .projets-domaine {
+      padding: var(--espace-xl) 0;
+      border-bottom: 1px solid var(--bordure);
+    }
+    .projets-domaine:last-child {
+      border-bottom: none;
+    }
+    .projets-entete-domaine {
+      display: flex;
+      flex-direction: column;
+      gap: var(--espace-xs);
+      margin-bottom: var(--espace-l);
+    }
+    .projets-index {
+      font-family: var(--police-mono);
+      font-size: 0.9rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .projets-grille-technique {
+      list-style: none;
+      padding: 0;
+      margin: var(--espace-l) 0 0 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--espace-m);
+    }
+    @media (min-width: 768px) {
+      .projets-grille-technique {
+        grid-template-columns: 1fr 1fr;
+      }
+      .projets-domaine:nth-child(even) .colonnes--asym {
+        grid-template-columns: 5fr 7fr;
+      }
+    }
+    .projets-element {
+      background-color: var(--surface);
+      border: 1px solid var(--bordure);
+      padding: var(--espace-m);
+    }
+    .projets-element h4 {
+      font-family: var(--police-mono);
+      font-size: 1rem;
+      margin-top: 0;
+      margin-bottom: var(--espace-xs);
+      color: var(--texte);
+    }
+    .projets-element p {
+      font-size: 0.95rem;
+      margin: 0;
+    }
+    .schema-technique {
+      width: 100%;
+      height: auto;
+      max-height: 260px;
+      border: 1px solid var(--bordure);
+      background-color: var(--surface);
+      padding: var(--espace-m);
+      box-sizing: border-border-box;
+    }
+    .section--inverse .schema-technique {
+      background-color: #0E2118;
+      border-color: rgba(200, 194, 180, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="entete">
+    <div class="conteneur conteneur--large entete__interieur">
+      <a href="index.html" class="marque" aria-label="Accueil Savetronik">SAVETRONIK</a>
+      <button class="nav-bouton" id="btn-menu" aria-label="Menu de navigation" aria-expanded="false" aria-controls="nav-principale">MENU</button>
+      <nav class="nav" id="nav-principale">
+        <a href="index.html">Accueil</a>
+        <a href="projets.html" aria-current="page">Projets</a>
+        <a href="avantages.html">Avantages</a>
+        <a href="atelier.html">Atelier &amp; Dons</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu-principal">
+
+    <!-- EN-TÊTE DE PAGE -->
+    <section class="section">
+      <div class="conteneur">
+        <div class="colonnes colonnes--asym">
+          <div>
+            <span class="reperes">REPERTOIRE TECHNIQUE</span>
+            <h1 style="font-size: var(--h1-taille); margin-top: var(--espace-xs); margin-bottom: var(--espace-m);">Projets et domaine d'intervention matérielle</h1>
+          </div>
+          <div>
+            <p class="texte-large">
+              L'atelier Savetronik intervient sur les équipements électroniques grand public et professionnels avec une approche méthodique basée sur le diagnostic à la pièce et la réparation au composant.
+            </p>
+            <p>
+              Chaque domaine d'activité regroupe des interventions concrètes visant à traiter les pannes à la source, à prolonger la durée d'utilisation du matériel ou à modifier son fonctionnement pour répondre à des besoins locaux sans rachat d'équipement neuf.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOMAINE 1: CONSOLES & PÉRIPHÉRIQUES -->
+    <section class="projets-domaine">
+      <div class="conteneur">
+        <div class="projets-entete-domaine">
+          <span class="projets-index">DOMAINE // 01</span>
+          <h2 style="font-size: var(--h2-taille); margin: 0;">Consoles et périphériques de jeu</h2>
+        </div>
+        
+        <div class="colonnes colonnes--asym">
+          <div>
+            <p>
+              Les consoles modernes et leurs manettes subissent une usure mécanique et thermique accélérée. L'atelier prend en charge le traitement des pannes matérielles fréquentes sans remplacer la totalité de la carte mère.
+            </p>
+            <p>
+              Les interventions couvrent la réparation des sous-ensembles optiques, le recalibrage des commandes analogiques et la révision complète des systèmes de refroidissement.
+            </p>
+
+            <svg class="schema-technique" viewBox="0 0 400 200" aria-img=" true" aria-label="Schéma de recalibrage de potentiomètre de manette">
+              <rect x="10" y="10" width="380" height="180" fill="none" stroke="#C8C2B4" stroke-width="1" />
+              <!-- Repères axes -->
+              <line x1="50" y1="100" x2="350" y2="100" stroke="#C8C2B4" stroke-dasharray="4 4" stroke-width="1" />
+              <line x1="200" y1="30" x2="200" y2="170" stroke="#C8C2B4" stroke-dasharray="4 4" stroke-width="1" />
+              <!-- Signal dérive (drift) -->
+              <path d="M 50 120 Q 120 140 180 115" fill="none" stroke="#D9534F" stroke-width="1.5" stroke-dasharray="2 2" />
+              <!-- Signal corrigé -->
+              <circle cx="200" cy="100" r="40" fill="none" stroke="#142E22" stroke-width="1.5" />
+              <circle cx="200" cy="100" r="3" fill="#B86222" />
+              <path d="M 50 100 L 160 100 L 200 100 L 350 100" fill="none" stroke="#B86222" stroke-width="2" />
+              <text x="210" y="90" font-family="monospace" font-size="10" fill="#141A17">OFFSET: 0.00V</text>
+              <text x="60" y="145" font-family="monospace" font-size="10" fill="#D9534F">DERIVE DETECTEE</text>
+            </svg>
+          </div>
+
+          <div>
+            <ul class="projets-grille-technique" style="margin-top: 0;">
+              <li class="projets-element">
+                <h4>Lecteurs optiques PS5</h4>
+                <p>Diagnostic des blocs optiques défaillants, remplacement du laser de lecture, réparation des mécanismes d'éjection et réalignement des engrenages d'entraînement.</p>
+              </li>
+              <li class="projets-element">
+                <h4>Manettes DualSense</h4>
+                <p>Remplacement des potentiomètres d'axes sujets au glissement (drift), recalibrage tensionnel sur banc de test et remplacement des mécanismes d'interrupteurs usés.</p>
+              </li>
+              <li class="projets-element">
+                <h4>Maintenance PS4</h4>
+                <p>Dépoussiérage du bloc de dissipation, remplacement du métal liquide ou de la pâte thermique dégradée, et changement du port d'alimentation interne.</p>
+              </li>
+              <li class="projets-element">
+                <h4>Consoles Nintendo rétro</h4>
+                <p>Restauration des circuits d'alimentation des consoles Game Boy Color, remplacement des condensateurs électrolytiques séchés et pose d'écrans rétroéclairés à faible consommation.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOMAINE 2: MICRO-SOUDURE & PCB (SECTION INVERSÉE) -->
+    <section class="section section--inverse projets-domaine">
+      <div class="conteneur">
+        <div class="projets-entete-domaine">
+          <span class="projets-index" style="color: var(--accent);">DOMAINE // 02</span>
+          <h2 style="font-size: var(--h2-taille); margin: 0; color: #F5F3ED;">Micro-soudure et circuits imprimés (PCB)</h2>
+        </div>
+
+        <div class="colonnes colonnes--asym">
+          <div>
+            <p style="color: var(--texte-secondaire);">
+              La plupart des pannes matérielles considérées comme irréparables par le SAV classique proviennent de composants individuels en court-circuit ou de connecteurs arrachés.
+            </p>
+            <p style="color: var(--texte-secondaire);">
+              Grâce à l'utilisation du microscope d'atelier et de fer à air chaud, nous procédons à l'isolation de la panne au niveau du composant de surface (CMS) pour restaurer la carte d'origine.
+            </p>
+
+            <svg class="schema-technique" viewBox="0 0 400 200" aria-img=" true" aria-label="Schéma de reconstruction de piste PCB">
+              <rect x="10" y="10" width="380" height="180" fill="none" stroke="rgba(200, 194, 180, 0.3)" stroke-width="1" />
+              <!-- Empreinte puce CMS -->
+              <rect x="150" y="60" width="100" height="80" fill="none" stroke="#C8C2B4" stroke-width="1.5" />
+              <!-- Pistes cuivrées -->
+              <path d="M 30 100 L 150 100" stroke="#B86222" stroke-width="3" stroke-linecap="square" />
+              <path d="M 250 100 L 370 100" stroke="#B86222" stroke-width="3" stroke-linecap="square" />
+              <!-- Zone coupée / strappée -->
+              <circle cx="210" cy="100" r="15" fill="none" stroke="#B86222" stroke-dasharray="2 2" />
+              <path d="M 150 80 L 250 80" stroke="#C8C2B4" stroke-width="1" />
+              <path d="M 150 120 L 250 120" stroke="#C8C2B4" stroke-width="1" />
+              <!-- Fil de strap -->
+              <path d="M 140 100 Q 200 60 260 100" fill="none" stroke="#F5F3ED" stroke-width="1.5" />
+              <text x="145" y="45" font-family="monospace" font-size="10" fill="#B86222">PONTAGE DE PISTE 0.1mm</text>
+            </svg>
+          </div>
+
+          <div>
+            <ul class="projets-grille-technique" style="margin-top: 0;">
+              <li class="projets-element" style="background-color: #0E2118; border-color: rgba(200, 194, 180, 0.2);">
+                <h4 style="color: #F5F3ED;">Recherche de pannes</h4>
+                <p style="color: var(--texte-secondaire);">Diagnostic d'injection de tension sous caméra thermique et multimètre pour localiser les condensateurs ou puces en court-circuit sur ligne principale.</p>
+              </li>
+              <li class="projets-element" style="background-color: #0E2118; border-color: rgba(200, 194, 180, 0.2);">
+                <h4 style="color: #F5F3ED;">Connecteurs HDMI et USB-C</h4>
+                <p style="color: var(--texte-secondaire);">Dessoudage des ports endommagés, nettoyage des plages d'accueil au flux et brasure de connecteurs neufs renforcés à l'étain de plomb/argent.</p>
+              </li>
+              <li class="projets-element" style="background-color: #0E2118; border-color: rgba(200, 194, 180, 0.2);">
+                <h4 style="color: #F5F3ED;">Composants CMS &amp; QFN</h4>
+                <p style="color: var(--texte-secondaire);">Remplacement de puces de gestion de charge (PMIC), de contrôleurs réseau et de puces d'affichage au boîtier SMDs sans détériorer le substrat.</p>
+              </li>
+              <li class="projets-element" style="background-color: #0E2118; border-color: rgba(200, 194, 180, 0.2);">
+                <h4 style="color: #F5F3ED;">Reconstruction de pistes</h4>
+                <p style="color: var(--texte-secondaire);">Réparation des pastilles arrachées par pose de fils d'émaux fins et application de vernis épargne polymérisable sous rayons ultraviolets.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOMAINE 3: INFORMATIQUE ET SERVEURS -->
+    <section class="projets-domaine">
+      <div class="conteneur">
+        <div class="projets-entete-domaine">
+          <span class="projets-index">DOMAINE // 03</span>
+          <h2 style="font-size: var(--h2-taille); margin: 0;">Informatique et serveurs récupérés</h2>
+        </div>
+
+        <div class="colonnes colonnes--asym">
+          <div>
+            <p>
+              Les ordinateurs de bureau et les serveurs professionnels déclassés par les entreprises restent des machines performantes pour des usages domestiques ou d'infrastructure locale.
+            </p>
+            <p>
+              Savetronik récupère ces ordinateurs destinés à la déchetterie, vérifie l'intégralité du matériel composant par composant, et les réinstalle pour un usage axé sur la souveraineté des données et l'auto-hébergement.
+            </p>
+
+            <svg class="schema-technique" viewBox="0 0 400 200" aria-img=" true" aria-label="Schéma de reconditionnement de serveur">
+              <rect x="10" y="10" width="380" height="180" fill="none" stroke="#C8C2B4" stroke-width="1" />
+              <!-- Rack 1 -->
+              <rect x="40" y="30" width="320" height="35" fill="none" stroke="#142E22" stroke-width="1.5" />
+              <circle cx="60" cy="47" r="4" fill="#B86222" />
+              <circle cx="75" cy="47" r="4" fill="#142E22" />
+              <line x1="280" y1="40" x2="340" y2="40" stroke="#C8C2B4" stroke-width="2" />
+              <line x1="280" y1="50" x2="320" y2="50" stroke="#C8C2B4" stroke-width="2" />
+              <!-- Rack 2 -->
+              <rect x="40" y="80" width="320" height="35" fill="none" stroke="#142E22" stroke-width="1.5" />
+              <circle cx="60" cy="97" r="4" fill="#B86222" />
+              <circle cx="75" cy="97" r="4" fill="#B86222" />
+              <line x1="280" y1="90" x2="340" y2="90" stroke="#C8C2B4" stroke-width="2" />
+              <!-- Rack 3 -->
+              <rect x="40" y="130" width="320" height="35" fill="none" stroke="#142E22" stroke-width="1.5" />
+              <circle cx="60" cy="147" r="4" fill="#142E22" />
+              <line x1="280" y1="140" x2="310" y2="140" stroke="#C8C2B4" stroke-width="2" />
+              <text x="110" y="101" font-family="monospace" font-size="10" fill="#141A17">AUTO-HEBERGEMENT LOCAL</text>
+            </svg>
+          </div>
+
+          <div>
+            <ul class="projets-grille-technique" style="margin-top: 0;">
+              <li class="projets-element">
+                <h4>Reconditionnement d'ordinateurs</h4>
+                <p>Nettoyage mécanique, remplacement des disques mécaniques défaillants par des unités à mémoire flash et installation de systèmes d'exploitation légers.</p>
+              </li>
+              <li class="projets-element">
+                <h4>Validation des blocs secteur</h4>
+                <p>Test sous charge constante des alimentations ATX et adaptateurs secteur pour valider la stabilité des tensions et filtrer les résidus d'ondulation.</p>
+              </li>
+              <li class="projets-element">
+                <h4>Serveurs d'auto-hébergement</h4>
+                <p>Conversion de stations de travail en serveurs de stockage local (NAS) et plateformes de services autonomes exemptes d'abonnements distants.</p>
+              </li>
+              <li class="projets-element">
+                <h4>Valorisation de pièces détachées</h4>
+                <p>Démontage systématique des machines hors d'usage pour constituer un stock d'intervention : barrettes de RAM, cartes d'extension et connecteurs.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOMAINE 4: SYSTÈMES EMBARQUÉS ET MODDING -->
+    <section class="projets-domaine">
+      <div class="conteneur">
+        <div class="projets-entete-domaine">
+          <span class="projets-index">DOMAINE // 04</span>
+          <h2 style="font-size: var(--h2-taille); margin: 0;">Systèmes embarqués et modding matériel</h2>
+        </div>
+
+        <div class="colonnes colonnes--asym">
+          <div>
+            <p>
+              Le détournement matériel et l'intégration d'électronique programmable permettent de rajouter des fonctionnalités modernes à des équipements existants ou de concevoir des modules sur mesure.
+            </p>
+            <p>
+              Nous travaillons sur des architectures ouvertes à microcontrôleurs pour fabriquer des interfaces de commande locales, sans passer par des architectures fermées du commerce.
+            </p>
+
+            <svg class="schema-technique" viewBox="0 0 400 200" aria-img=" true" aria-label="Schéma de brochage microcontrôleur ESP32">
+              <rect x="10" y="10" width="380" height="180" fill="none" stroke="#C8C2B4" stroke-width="1" />
+              <!-- Puce ESP32 -->
+              <rect x="140" y="40" width="120" height="120" fill="none" stroke="#142E22" stroke-width="2" />
+              <text x="170" y="105" font-family="monospace" font-size="12" fill="#141A17">ESP32</text>
+              <!-- Broches Gauche -->
+              <line x1="80" y1="60" x2="140" y2="60" stroke="#B86222" stroke-width="1.5" />
+              <line x1="80" y1="80" x2="140" y2="80" stroke="#B86222" stroke-width="1.5" />
+              <line x1="80" y1="100" x2="140" y2="100" stroke="#B86222" stroke-width="1.5" />
+              <line x1="80" y1="120" x2="140" y2="120" stroke="#B86222" stroke-width="1.5" />
+              <line x1="80" y1="140" x2="140" y2="140" stroke="#B86222" stroke-width="1.5" />
+              <!-- Broches Droite -->
+              <line x1="260" y1="60" x2="320" y2="60" stroke="#142E22" stroke-width="1.5" />
+              <line x1="260" y1="80" x2="320" y2="80" stroke="#142E22" stroke-width="1.5" />
+              <line x1="260" y1="100" x2="320" y2="100" stroke="#142E22" stroke-width="1.5" />
+              <line x1="260" y1="120" x2="320" y2="120" stroke="#142E22" stroke-width="1.5" />
+              <line x1="260" y1="140" x2="320" y2="140" stroke="#142E22" stroke-width="1.5" />
+              <text x="35" y="65" font-family="monospace" font-size="9" fill="#B86222">GPIO16</text>
+              <text x="35" y="145" font-family="monospace" font-size="9" fill="#B86222">VCC 3.3V</text>
+            </svg>
+          </div>
+
+          <div>
+            <ul class="projets-grille-technique" style="margin-top: 0;">
+              <li class="projets-element">
+                <h4>Prototypage microcontrôleurs</h4>
+                <p>Développement de projets basés sur puces ESP32 et Raspberry Pi pour le traitement de signaux, la télémesure et le contrôle d'actionneurs.</p>
+              </li>
+              <li class="projets-element">
+                <h4>Assistants vocaux locaux</h4>
+                <p>Assemblage et programmation de boîtiers vocaux d'intérieur fonctionnant sans transmission vers des serveurs tiers ou connexions distantes.</p>
+              </li>
+              <li class="projets-element">
+                <h4>Éclairage LED adressable</h4>
+                <p>Intégration de rubans de LED type WS2812B sur bus de données direct avec alimentations découplées et injection de courant réseau.</p>
+              </li>
+              <li class="projets-element">
+                <h4>Modernisation d'équipements</h4>
+                <p>Ajout de récepteurs audio sans fil et d'alimentations régulées à découpage au sein d'anciens récepteurs radio ou matériels audio réformés.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANDEAU CTA INTERACTION -->
+    <section class="section section--teintee">
+      <div class="conteneur conteneur--large">
+        <div class="colonnes colonnes--asym" style="align-items: center;">
+          <div>
+            <h3 style="font-size: var(--h2-taille); margin-top: 0; margin-bottom: var(--espace-xs);">Un matériel à faire vérifier ou modifier ?</h3>
+            <p style="margin: 0;">
+              L'accueil à l'atelier de Provin s'effectue exclusivement sur rendez-vous après analyse préliminaire de votre demande.
+            </p>
+          </div>
+          <div style="text-align: right;">
+            <a href="contact.html" class="bouton">Soumettre une demande de diagnostic</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur conteneur--large">
+      <div class="pied__colonnes">
+        <div>
+          <h3 style="font-size: 1.2rem; margin-top: 0; margin-bottom: var(--espace-s);">Savetronik</h3>
+          <p style="font-size: 0.95rem;">
+            Association à but non lucratif (Loi 1901), déclarée en septembre 2026.<br>
+            Objet : Réduction des déchets DEEE, diagnostic, réparation au niveau composant, reconditionnement et modding matériel.
+          </p>
+        </div>
+        <div>
+          <h3 style="font-size: 1.2rem; margin-top: 0; margin-bottom: var(--espace-s);">Arborescence</h3>
+          <ul class="filets" style="font-family: var(--police-mono, monospace); font-size: 0.9rem;">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="projets.html">Projets techniques</a></li>
+            <li><a href="avantages.html">Avantages du modèle</a></li>
+            <li><a href="atelier.html">Atelier &amp; Dons</a></li>
+            <li><a href="contact.html">Contact &amp; Diagnostic</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="font-size: 1.2rem; margin-top: 0; margin-bottom: var(--espace-s);">Coordonnées &amp; Siège</h3>
+          <p style="font-family: var(--police-mono, monospace); font-size: 0.9rem;">
+            Association Savetronik<br>
+            Fondateur &amp; Président : Ainis Haichour<br>
+            50 rue Camille Desmoulins<br>
+            59185 Provin<br>
+            Territoire : Provin, Bauvin, Weppes, MEL.<br>
+            <em>Accueil uniquement sur rendez-vous.</em>
+          </p>
+        </div>
+      </div>
+      <div class="pied__mentions">
+        <span>© 2026 Savetronik, Association à but non lucratif (Loi 1901), Atelier d'électronique et de réemploi matériel</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navigation mobile
+    const btnMenu = document.getElementById('btn-menu');
+    const navPrincipale = document.getElementById('nav-principale');
+
+    if (btnMenu && navPrincipale) {
+      btnMenu.addEventListener('click', () => {
+        const estOuvert = navPrincipale.classList.contains('nav--ouverte');
+        if (estOuvert) {
+          navPrincipale.classList.remove('nav--ouverte');
+          btnMenu.setAttribute('aria-expanded', 'false');
+        } else {
+          navPrincipale.classList.add('nav--ouverte');
+          btnMenu.setAttribute('aria-expanded', 'true');
+        }
+      });
+    }
+  </script>
+</body>
+</html>

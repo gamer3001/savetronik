@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Savetronik — Atelier, dons de matériel et bénévolat à Provin</title>
+  <meta name="description" content="Modalités de participation à l'association Savetronik : collecte de dons d'équipements informatiques et électroniques, bénévolat technique et partenariats dans la MEL.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Structure spécifique de la page Atelier */
+    .atelier-grille {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--espace-l);
+    }
+    @media (min-width: 768px) {
+      .atelier-grille {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+      }
+    }
+
+    .carte-action {
+      background-color: var(--surface);
+      border: 1px solid var(--bordure);
+      padding: var(--espace-l);
+    }
+
+    .carte-action--inverse {
+      background-color: var(--bloc-fonce);
+      color: var(--fond);
+      border: 1px solid var(--bloc-fonce);
+    }
+    .carte-action--inverse h2,
+    .carte-action--inverse h3 {
+      color: var(--fond);
+    }
+    .carte-action--inverse p {
+      color: var(--texte-secondaire);
+    }
+
+    .sch-atelier {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      display: block;
+      margin: var(--espace-m) 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="entete">
+    <div class="conteneur conteneur--large entete__interieur">
+      <a href="index.html" class="marque" aria-label="Accueil Savetronik">SAVETRONIK</a>
+      <button class="nav-bouton" id="btn-menu" aria-label="Menu de navigation" aria-expanded="false" aria-controls="nav-principale">MENU</button>
+      <nav class="nav" id="nav-principale">
+        <a href="index.html">Accueil</a>
+        <a href="projets.html">Projets</a>
+        <a href="avantages.html">Avantages</a>
+        <a href="atelier.html" aria-current="page">Atelier &amp; Dons</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Premier écran : Présentation générale de l'atelier -->
+    <section class="section">
+      <div class="conteneur conteneur--large">
+        <div class="colonnes colonnes--asym">
+          <div>
+            <h1 class="premier-ecran__titre">Fonctionnement de l'atelier et engagement local</h1>
+            <p class="chapeau">
+              L'association Savetronik s'appuie sur la participation citoyenne, la collecte d'équipements hors d'usage et les synergies territoriales pour limiter le flux de déchets électroniques à Provin et dans la Métropole Européenne de Lille.
+            </p>
+            <p>
+              Toutes les activités se déroulent au siège social situé 50 rue Camille Desmoulins à Provin. Pour préserver la qualité de l'accueil et la sécurité des manipulations de micro-soudure, l'accès au lieu s'effectue exclusivement après prise de rendez-vous.
+            </p>
+          </div>
+          <div>
+            <!-- Schéma SVG : Signal oscilloscope et fer à souder -->
+            <svg class="sch-atelier" viewBox="0 0 400 240" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="10" y="10" width="380" height="220" rx="2" stroke="#C8C2B4" stroke-width="1" fill="#EAE6DC"/>
+              <!-- Grille technique -->
+              <path d="M 50 10 V 230 M 100 10 V 230 M 150 10 V 230 M 200 10 V 230 M 250 10 V 230 M 300 10 V 230 M 350 10 V 230" stroke="#C8C2B4" stroke-width="0.5" stroke-dasharray="2 4"/>
+              <path d="M 10 50 H 390 M 10 90 H 390 M 10 130 H 390 M 10 170 H 390 M 10 210 H 390" stroke="#C8C2B4" stroke-width="0.5" stroke-dasharray="2 4"/>
+              <!-- Signal oscilloscope -->
+              <path d="M 20 130 L 70 130 L 90 40 L 110 200 L 130 130 L 200 130 L 210 70 L 230 170 L 250 130 L 380 130" stroke="#B86222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Repères textuels -->
+              <text x="25" y="30" font-family="monospace" font-size="10" fill="#141A17">TEST_SIGNAL // OSC-01</text>
+              <text x="25" y="220" font-family="monospace" font-size="10" fill="#B86222">FREQ: 100kHz -- VPP: 5.0V</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Axe 1 : Collecte et dons de matériel -->
+    <section class="section section--teintee">
+      <div class="conteneur conteneur--large">
+        <div class="pile">
+          <h2 class="titre-section">Dons de matériel et récupération de composants</h2>
+          <p class="texte-large" style="max-width: 75ch;">
+            Plutôt que d'acheminer des matériels défaillants ou déclassés vers les déchetteries saturées, Savetronik reçoit vos équipements pour leur donner une seconde vie sous forme de machines reconditionnées ou de réserves de pièces détachees.
+          </p>
+        </div>
+
+        <div class="atelier-grille" style="margin-top: var(--espace-l);">
+          <div class="carte-action">
+            <h3>Équipements acceptés en don</h3>
+            <ul class="filets" style="margin-top: var(--espace-m);">
+              <li>Unités centrales, ordinateurs portables, serveurs de réseau et sous-ensembles informatiques.</li>
+              <li>Consoles de jeux vidéo récentes ou anciennes, manettes, blocs d'alimentation et périphériques.</li>
+              <li>Cartes mères hors d'usage, cartes graphiques, modules de mémoire RAM et disques durables.</li>
+              <li>Câblage structuré, connectique d'alimentation, câbles vidéo et composants électroniques discrets.</li>
+            </ul>
+          </div>
+
+          <div class="carte-action">
+            <h3>Traitement et destination du matériel</h3>
+            <p>
+              Chaque appareil réceptionné fait l'objet d'un premier tri systématique dans nos locaux :
+            </p>
+            <dl class="definitions" style="margin-top: var(--espace-m);">
+              <dt>Option A, Remise en état</dt>
+              <dd>Si l'appareil nécessite une intervention ciblée (remplacement de condensateurs, réparation d'une ligne d'alimentation), il est réparé puis testé longuement.</dd>
+              <dt>Option B, Banque de pièces</dt>
+              <dd>Si la carte principale est irrécupérable, les composants saines (connecteurs HDMI, puces de régulation, fusibles, puces mémoire) sont dessoudés et classés pour servir à d'autres interventions.</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Axe 2 : Bénévolat et apprentissage -->
+    <section class="section">
+      <div class="conteneur conteneur--large">
+        <div class="colonnes colonnes--asym">
+          <div>
+            <h2 class="titre-section">Sessions techniques et bénévolat</h2>
+            <p>
+              Savetronik est une association à but non lucratif qui rassemble des personnes soucieuses de comprendre la matière électronique et d'acquérir de la pratique en matière d'entretien matériel.
+            </p>
+            <p>
+              Les bénévoles sont intégrés aux activités selon leurs disponibilités et leurs centres d'intérêt, sans prérequis d'expérience administrative ou d'études d'ingénierie.
+            </p>
+          </div>
+          <div>
+            <div class="carte-action">
+              <h3>Domaines de participation bénévoles</h3>
+              <ul class="filets" style="margin-top: var(--espace-m);">
+                <li>Diagnostic de premier niveau au multimètre et contrôle visuel au microscope.</li>
+                <li>Apprentissage des méthodes de dessoudage à l'air chaud et de soudure CMS au fer.</li>
+                <li>Nettoyage par ultrasons, réfection des pates thermiques et remontage mécano-plastique.</li>
+                <li>Installation de systèmes d'exploitation légers et de logiciels open-source sur le matériel reconditionné.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Axe 3 : Partenariats locaux et institutionnels -->
+    <section class="section section--inverse">
+      <div class="conteneur conteneur--large">
+        <div class="pile">
+          <h2 class="titre-section">Partenariats territoriaux dans la MEL</h2>
+          <p class="texte-large" style="max-width: 75ch;">
+            L'association noue des contacts avec les structures éducatives, les collectivités locales et les acteurs associatifs du secteur des Weppes et de la Métropole Européenne de Lille.
+          </p>
+        </div>
+
+        <div class="atelier-grille" style="margin-top: var(--espace-l);">
+          <div class="carte-action carte-action--inverse">
+            <h3>Établissements scolaires et formation</h3>
+            <p>
+              Propositions d'ateliers de sensibilisation autour du droit à la réparation, démonstration des méthodes d'analyse de pannes et présentation des filières de valorisation des déchets DEEE auprès des élèves.
+            </p>
+          </div>
+
+          <div class="carte-action carte-action--inverse">
+            <h3>Collectivités et associations de Provin &amp; Bauvin</h3>
+            <p>
+              Mise en œuvre de solutions d'équipement informatique réemployé pour des besoins associatifs locaux ou des ateliers numériques municipaux, réduisant ainsi l'impact budgétaire et environnemental.
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top: var(--espace-xl); border-top: 1px solid var(--texte-secondaire); padding-top: var(--espace-l);">
+          <p class="reperes" style="color: var(--texte-secondaire);">
+            TERRITOIRE : PROVIN / BAUVIN / WEPPES / MÉTROPOLE EUROPÉENNE DE LILLE
+          </p>
+          <div style="margin-top: var(--espace-m);">
+            <a href="contact.html" class="bouton">Proposer un don ou un partenariat</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur conteneur--large">
+      <div class="pied__colonnes">
+        <div>
+          <h3 style="font-size: 1.2rem; margin-top: 0; margin-bottom: var(--espace-s);">Savetronik</h3>
+          <p style="font-size: 0.95rem;">
+            Association à but non lucratif (Loi 1901), déclarée en septembre 2026.<br>
+            Objet : Réduction des déchets DEEE, diagnostic, réparation au niveau composant, reconditionnement et modding matériel.
+          </p>
+        </div>
+        <div>
+          <h3 style="font-size: 1.2rem; margin-top: 0; margin-bottom: var(--espace-s);">Arborescence</h3>
+          <ul class="filets" style="font-family: var(--police-mono, monospace); font-size: 0.9rem;">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="projets.html">Projets techniques</a></li>
+            <li><a href="avantages.html">Avantages du modèle</a></li>
+            <li><a href="atelier.html">Atelier &amp; Dons</a></li>
+            <li><a href="contact.html">Contact &amp; Diagnostic</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="font-size: 1.2rem; margin-top: 0; margin-bottom: var(--espace-s);">Coordonnées &amp; Siège</h3>
+          <p style="font-family: var(--police-mono, monospace); font-size: 0.9rem;">
+            Association Savetronik<br>
+            Fondateur &amp; Président : Ainis Haichour<br>
+            50 rue Camille Desmoulins<br>
+            59185 Provin<br>
+            Territoire : Provin, Bauvin, Weppes, MEL.<br>
+            <em>Accueil uniquement sur rendez-vous.</em>
+          </p>
+        </div>
+      </div>
+      <div class="pied__mentions">
+        <span>© 2026 Savetronik, Association à but non lucratif (Loi 1901), Atelier d'électronique et de réemploi matériel</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Gestion simplifiée du menu mobile
+    const btnMenu = document.getElementById('btn-menu');
+    const navPrincipale = document.getElementById('nav-principale');
+
+    if (btnMenu && navPrincipale) {
+      btnMenu.addEventListener('click', function() {
+        const estOuvert = btnMenu.getAttribute('aria-expanded') === 'true';
+        btnMenu.setAttribute('aria-expanded', !estOuvert);
+        navPrincipale.classList.toggle('nav--ouverte');
+      });
+    }
+  </script>
+</body>
+</html>
